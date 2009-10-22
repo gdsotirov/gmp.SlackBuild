@@ -1,0 +1,11 @@
+gmp: GMP (GNU's MP Bignum Library)
+gmp:
+gmp: GMP is a free library for arbitrary precision arithmetic, operating
+gmp: on signed integers, rational numbers, and floating point numbers.
+gmp: There is no practical limit to the precision except the ones implied
+gmp: by the available memory in the machine GMP runs on.  GMP has a rich
+gmp: set of functions, and the functions have a regular interface.
+gmp:
+gmp:
+gmp:
+gmp: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
