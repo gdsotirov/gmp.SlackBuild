@@ -8,7 +8,7 @@
 . ../slack-package.conf
 
 NAME=gmp
-VERSION=4.3.2
+VERSION=5.0.1
 BUILD=${BUILD:-1}
 ARCH=${ARCH:-i486}
 
