@@ -19,7 +19,7 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: gmp.SlackBuild,v 1.5 2012/01/29 07:46:31 gsotirov Exp $
+# $Id: gmp.SlackBuild,v 1.6 2012/02/12 20:45:59 gsotirov Exp $
 #
 # SlackBuild for GNU's MP Bignum library
 # Written by Georgi D. Sotirov <gdsotirov@dir.bg>
@@ -29,7 +29,7 @@
 . ../../slack-package.conf
 
 NAME=gmp
-VERSION=5.0.3
+VERSION=5.0.4
 BUILD=${BUILD:-1}
 ARCH=${ARCH:-i486}
 
