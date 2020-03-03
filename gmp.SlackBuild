@@ -1,11 +1,32 @@
 #!/bin/sh
 #
+# Slackware build script for GMP
+# Copyright (C) 2009-2020 Georgi D. Sotirov <gdsotirov@dir.bg>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+# Visit SlackPack at http://sotirov-bg.net/slackpack/
+#
+# $Id: gmp.SlackBuild,v 1.2.2.1 2020/03/03 08:20:52 gsotirov Exp $
+#
 # SlackBuild for GNU's MP Bignum library
 # Written by Georgi D. Sotirov <gdsotirov@dir.bg>
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
 
-. ../slack-package.conf
+. ../../slack-package.conf
 
 NAME=gmp
 VERSION=4.3.2
@@ -34,7 +55,7 @@ mkdir -p $PKG
 
 # Extract the source
 cd $TMP
-tar -xvf $CWD/$NAME-$VERSION.tar.bz2 || exit 1
+tar -xvf $CWD/$NAME-$VERSION.tar.bz2 || exit 3
 SRC=$TMP/$NAME-$VERSION
 cd $SRC
 fix_source
@@ -46,20 +67,21 @@ CXXFLAGS=$SLKCFLAGS \
             --host=$ARCH-slackware-linux \
             --prefix=/usr \
             --sysconfdir=/etc \
+            --libdir=/usr/lib${LIBDIRSUFFIX} \
             --infodir=/usr/info \
             --localstatedir=/var \
             --enable-cxx  \
             --enable-fft \
             --enable-shared=yes \
             --enable-static=no \
-            --with-readline || exit 2
+            --with-readline || exit 4
 
 # Build
-make -j4 all || exit 3 
-make -j4 check || exit 4
+make -j4 all || exit 5 
+make -j4 check || exit 6
 
 # Install
-make DESTDIR=$PKG install || exit 5
+make DESTDIR=$PKG install || exit 7
 
 # Prepare
 bin_perms $PKG
